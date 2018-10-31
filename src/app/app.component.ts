@@ -124,6 +124,7 @@ export class AppComponent implements OnInit {
     tile.reveal = true;
     if (tile.isBomb) {
       this.gameStatus = "Game Over";
+      alert("GAME OVER");
     } else if (tile.numberText == 0) {
       this.revealAllZero(tile);
     }
