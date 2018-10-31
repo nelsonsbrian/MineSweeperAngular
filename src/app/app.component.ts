@@ -10,11 +10,15 @@ export class AppComponent implements OnInit {
   title = 'MineSweeper';
   gameGrid: any[];
   gameRow: Tile[];
-  gameRows: number = 10;
-  gameCols: number = 10;
-  gameBombsCount: number = 20;
+  gameRows: number = 15;
+  gameCols: number = 15;
+  gameBombsCount: number = 40;
   gameStatus: string = "Playing";
   isGameOver: boolean = false;
+  gameTime: number;
+  gameMin: number;
+  gameSec: number;
+  gameTimeText: string;
   gameDirections: any[] = [
     [-1, -1],
     [-1, 0],
@@ -28,9 +32,37 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.resetGame();
+    this.startTime();
   }
 
+  startTime() {
+    setInterval(() => {
+      this.gameTime++;
+      this.gameMin = Math.floor(this.gameTime / 60);
+      this.gameSec = this.gameTime % 60;
+      let tempSec: string;
+      let tempMin: string;
+
+      if (this.gameMin < 100) {
+        tempMin = "0" + this.gameMin.toString();
+      } else {
+        tempMin = this.gameMin.toString();
+      }
+      if (this.gameSec < 10) {
+        tempSec = "0" + this.gameSec.toString();
+      } else {
+        tempSec = this.gameSec.toString();
+      }
+
+      this.gameTimeText = tempMin + ":" + tempSec;
+
+    }, 1000);
+  }
+
+
+
   resetGame() {
+    this.gameTime = 0;
     this.gameGrid = [];
     this.gameRow = [];
     this.isGameOver = false;
