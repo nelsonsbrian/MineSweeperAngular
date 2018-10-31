@@ -26,7 +26,8 @@ h1 {
 .gameboardBorder {
     padding: 3%;
     border: 1px solid black;
-    background: darkgray;    
+    background: darkgray;   
+     
 }
 
 .hidden {
