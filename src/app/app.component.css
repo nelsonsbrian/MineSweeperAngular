@@ -1,10 +1,78 @@
 .wrapper {
+    width: 600px;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-gap: 0px;
-    grid-auto-rows: minmax(100px, auto);
+    grid-auto-rows: minmax(60px, auto);
+    margin: 0 auto;
 }
 
 .tile {
     border: 1px solid black;
+    width: 60px;
+    height: 60px;
+}
+
+.text {
+    margin: 35px auto;
+}
+
+.hidden {
+    background-image: url("../assets/images/covered.png");
+    background-size: cover;
+}
+
+.bomb {
+    background-image: url("../assets/images/mine.png");
+    background-size: cover;
+}
+
+.empty {
+    background-image: url("../assets/images/empty.png");
+    background-size: cover;
+}
+
+.number1 {
+    background-image: url("../assets/images/number-1.png");
+    background-size: cover;
+}
+
+.number2 {
+    background-image: url("../assets/images/number-2.png");
+    background-size: cover;
+}
+
+.number3 {
+    background-image: url("../assets/images/number-3.png");
+    background-size: cover;
+}
+
+.number4 {
+    background-image: url("../assets/images/number-4.png");
+    background-size: cover;
+}
+
+.number5 {
+    background-image: url("../assets/images/number-5.png");
+    background-size: cover;
+}
+
+.number6 {
+    background-image: url("../assets/images/number-6.png");
+    background-size: cover;
+}
+
+.number7 {
+    background-image: url("../assets/images/number-7.png");
+    background-size: cover;
+}
+
+.number8 {
+    background-image: url("../assets/images/number-8.png");
+    background-size: cover;
+}
+
+.mine-wrong {
+    background-image: url("../assets/images/mine-wrong.png");
+    background-size: cover;  
 }

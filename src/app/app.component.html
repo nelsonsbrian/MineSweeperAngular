@@ -4,14 +4,15 @@
     Welcome to {{ title }}!
   </h1>
   <div class="heading">
-    <h3>Total Bombs: {{gameBombsCount}} Status: {{gameStatus}}</h3>
+    <h3>Total Bombs: {{gameBombsCount}} Status: {{gameStatus}}
+      <button *ngIf="isGameOver" (click)="resetGame()">Reset</button>
+    </h3>
   </div>
   <div *ngIf="gameGrid.length > 0" id="gameboard">
     <div *ngFor="let row of gameGrid" class="wrapper">
-      <div *ngFor="let tile of row" class="tile"  (click)="clickFunction(tile)">
+      <div *ngFor="let tile of row" class="tile {{tile.class}}"  (click)="clickFunction(tile)">
         <div *ngIf="tile.reveal">
-          {{tile.isBomb}}<br>
-          {{tile.iconString}}
+          <!-- <p class="text">{{tile.iconString}}</p> -->
       </div>
     </div>
   </div>

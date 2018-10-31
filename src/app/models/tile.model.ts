@@ -4,6 +4,9 @@ export class Tile {
     isBomb: boolean;
     iconString: string;
     numberText: number;
+    neighbors: Tile[];
+    isLastClicked: boolean = false;
+    class: string = "hidden";
     constructor(public row: number, public col: number) {
         this.reveal = false;
         this.isBomb = false;
@@ -22,6 +25,6 @@ export class Tile {
         if (adjacentTargetTile.isBomb) {
             this.numberText++;
         }
-
     }
+
 }
