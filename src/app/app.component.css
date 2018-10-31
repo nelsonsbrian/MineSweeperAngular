@@ -1,18 +1,33 @@
 .wrapper {
     width: 600px;
     display: grid;
-    grid-template-columns: repeat(15, 1fr);
+    grid-template-columns: repeat(35, 1fr);
     grid-gap: 0px;
-    /* grid-auto-rows: minmax(60px, auto); */
-    margin: 0 auto;
+    grid-auto-rows: minmax(30px, auto);
+    /* margin: 0 auto; */
+}
+
+h1 {
+    color: white;
+    font-weight: bold;
 }
 
 .tile {
     border: 1px solid black;
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
 }
 
+.heading {
+    border: 1px solid black;
+    background: darkgray;
+}
+
+.gameboardBorder {
+    padding: 3%;
+    border: 1px solid black;
+    background: darkgray;    
+}
 
 .hidden {
     background-image: url("../assets/images/covered.png");

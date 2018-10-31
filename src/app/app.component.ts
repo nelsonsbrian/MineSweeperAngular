@@ -10,15 +10,16 @@ export class AppComponent implements OnInit {
   title = 'MineSweeper';
   gameGrid: any[];
   gameRow: Tile[];
-  gameRows: number = 15;
-  gameCols: number = 15;
-  gameBombsCount: number = 40;
+  gameRows: number = 35;
+  gameCols: number = 35;
+  gameBombsCount: number = 80;
   gameStatus: string = "Playing";
   isGameOver: boolean = false;
   gameTime: number;
   gameMin: number;
   gameSec: number;
-  gameTimeText: string;
+  gameStarted: boolean;
+  gameTimeText: string = "00:00";
   gameDirections: any[] = [
     [-1, -1],
     [-1, 0],
@@ -32,17 +33,16 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.resetGame();
-    this.startTime();
   }
-
+  
   startTime() {
-    setInterval(() => {
+    let sweeperCounter = setInterval(() => {
       this.gameTime++;
       this.gameMin = Math.floor(this.gameTime / 60);
       this.gameSec = this.gameTime % 60;
       let tempSec: string;
       let tempMin: string;
-
+      
       if (this.gameMin < 100) {
         tempMin = "0" + this.gameMin.toString();
       } else {
@@ -53,16 +53,22 @@ export class AppComponent implements OnInit {
       } else {
         tempSec = this.gameSec.toString();
       }
-
+      
       this.gameTimeText = tempMin + ":" + tempSec;
-
+      
+      if (this.isGameOver) {
+        clearInterval(sweeperCounter);
+      }
+      
     }, 1000);
   }
-
-
-
+  
+  
+  
   resetGame() {
+    this.gameStarted = false;
     this.gameTime = 0;
+    this.gameTimeText = "00:00"
     this.gameGrid = [];
     this.gameRow = [];
     this.isGameOver = false;
@@ -185,12 +191,18 @@ export class AppComponent implements OnInit {
   }
 
   clickFunction(tile: Tile) {
-    tile.isLastClicked = true;
-    this.checkTiles(tile);
-    if (tile.isBomb) {
-      this.gameStatus = "Game Over";
-      this.isGameOver = true;
-      this.gameOver();
+    if (!this.gameStarted) {
+      this.gameStarted = true;
+      this.startTime();
+    }
+    if (!this.isGameOver) {
+      tile.isLastClicked = true;
+      this.checkTiles(tile);
+      if (tile.isBomb) {
+        this.gameStatus = "Game Over";
+        this.isGameOver = true;
+        this.gameOver();
+      }
     }
   }
 

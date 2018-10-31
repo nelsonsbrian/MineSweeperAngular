@@ -9,10 +9,12 @@
     </h3>
   </div>
   <div *ngIf="gameGrid.length > 0" id="gameboard">
-    <div *ngFor="let row of gameGrid" class="wrapper">
-      <div *ngFor="let tile of row" class="tile {{tile.class}}"  (click)="clickFunction(tile)">
-        <div *ngIf="tile.reveal">
-          <!-- <p class="text">{{tile.iconString}}</p> -->
+    <div class="gameboardBorder">
+      <div *ngFor="let row of gameGrid" class="wrapper">
+        <div *ngFor="let tile of row" class="tile {{tile.class}}"  (click)="clickFunction(tile)">
+          <div *ngIf="tile.reveal">
+            <!-- <p class="text">{{tile.iconString}}</p> -->
+        </div>
       </div>
     </div>
   </div>

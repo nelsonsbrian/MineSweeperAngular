@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background: darkslategray;
+    background-image: url(https://www.muralswallpaper.com/app/uploads/grey-mist-forest-mural-wallpaper-plain.jpg);
+    background-repeat: no-repeat;
+    padding-top: 30px;
+    background-position-y: 125px; 
+    background-attachment: fixed;
+}
