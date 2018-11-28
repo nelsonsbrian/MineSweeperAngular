@@ -8,7 +8,9 @@
 
 Recreating the classic game Minesweeper utilizing Angular. During my coding bootcamp's javascript 4 week module, this project was done after 2 weeks of intensive Angular practice.
 
-## Development Notes & Issues
+## Gameplay
+
+![Screenshot](./src/assets/images/minesweeper.png)
 
 ## Known bugs & Missing Features
 
@@ -18,6 +20,7 @@ Recreating the classic game Minesweeper utilizing Angular. During my coding boot
 ## Contact & Support
 
 * Brian nelson - nelsonsbrian@gmail.com
+* Ryan Lee - hyungnaelee@gmail.com
 
 ## Technologies used
 * Angular
