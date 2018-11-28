@@ -1,27 +1,25 @@
 # MineSweeper
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+## Epicodus Pair Project Week 4 - Javascript/Angular - October 28th, 2018
 
-## Development server
+### By **Brian Nelson** && **Ryan Lee**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Description
 
-## Code scaffolding
+Recreating the classic game Minesweeper utilizing Angular. During my coding bootcamp's javascript 4 week module, this project was done after 2 weeks of intensive Angular practice.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Development Notes & Issues
 
-## Build
+## Known bugs & Missing Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+* No right click functionality was created to mark cells with bombs
+* Timer does not stop after game is won
 
-## Running unit tests
+## Contact & Support
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Brian nelson - nelsonsbrian@gmail.com
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Technologies used
+* Angular
+* JavaScript
+* Node.js
